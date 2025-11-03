@@ -5,6 +5,36 @@ Estudiantes: [Maria Jose Peña Velandia, Joshara Valentina Palacios, Lina Marcel
 Fecha: Noviembre 2025
 Título de la práctica: Señales electromiográficas EMG 
 ## PARTE A – Captura de la señal emulada
+Se utilizó un generador de señales para emular la actividad eléctrica muscular (EMG). En el canal 1 se configuró el modo Arbitrary (Arb) con la función EMG, estableciendo una frecuencia portadora de 1 Hz y una frecuencia de modulación de 1 MHz en modo AM (amplitud modulada), con una profundidad de modulación del 1 %. La amplitud se fijó en 5 Vpp generando una señal que simula contracciones musculares periódicas.
+
+
+<img width="856" height="387" alt="Captura de pantalla 2025-11-02 222632" src="https://github.com/user-attachments/assets/886aa137-89f8-435b-ad81-fded40fb52ad" />
+
+
+
+Se segmento la señal en cinco contracciones simuladas lo que permite analizar individualmente cada evento muscular dentro del registro completo. En el contexto de la señal EMG emulada, cada contracción representa una activación independiente del músculo, con posibles variaciones en frecuencia, amplitud y duración.
+Dividir la señal total en segmentos facilita el cálculo de parámetros específicos (como frecuencia media y frecuencia mediana) para cada contracción, lo que permite comparar su comportamiento y observar cómo evoluciona la actividad muscular simulada a lo largo del tiempo.
+
+Posteriormente se realiza el cálculo de la frecuencia media y la frecuencia mediana para cada contracción lo cual permite caracterizar el contenido espectral de la señal EMG, es decir cómo se distribuye la energía en las diferentes frecuencias. Al calcular ambas frecuencias para cada una de las cinco contracciones simuladas, se obtiene una descripción cuantitativa de cómo varía el comportamiento frecuencial de la señal EMG a lo largo del tiempo. Esto permite analizar si existen cambios progresivos en la activación simulada del músculo o si la señal mantiene una respuesta estable en todas las contracciones.
+
+En la tabla se presentan los valores de frecuencia media y frecuencia mediana correspondientes a cinco contracciones musculares extraídas de la señal EMG. Estos parámetros reflejan la distribución de energía en el espectro de la señal y están directamente relacionados con la actividad eléctrica de las fibras musculares durante la contracción. 
+
+<img width="496" height="185" alt="Captura de pantalla 2025-11-02 222943" src="https://github.com/user-attachments/assets/7cdc4b55-aebf-48fc-b5c2-70169b52e5ed" />
+
+
+Se observa que la frecuencia media aumenta ligeramente desde aproximadamente 84.9 Hz en la primera contracción hasta 91.4 Hz en la quinta. De forma similar, la frecuencia mediana también muestra un incremento leve, pasando de 33.2 Hz a 35.1 Hz. Este comportamiento sugiere que no hay una disminución significativa en las frecuencias características de la señal, lo cual indica que no se evidencia un proceso claro de fatiga muscular dentro del intervalo analizado. En condiciones de fatiga, se esperaría una tendencia descendente en ambas frecuencias, ya que la conducción de los potenciales de acción en las fibras musculares se hace más lenta con el cansancio. Por el contrario, el aumento progresivo que se evidencia podría deberse a una mayor activación de unidades motoras o a una mejora en la sincronización de las mismas a medida que avanza el registro, reflejando un patrón de adaptación o reclutamiento progresivo más que de fatiga.
+
+
+En la gráfica se observa la señal EMG completa, la cual presenta una serie de picos regulares que representan las contracciones musculares registradas a lo largo del tiempo. Esta señal fue segmentada en cinco partes iguales para analizar de manera separada cada contracción y calcular sus respectivas frecuencias medias y medianas, cuyos resultados se presentan en la tabla.
+
+<img width="682" height="391" alt="image" src="https://github.com/user-attachments/assets/06104c98-86ea-4b8c-9f7d-b6f2bb6e9753" />
+
+
+
+Los valores obtenidos muestran que la frecuencia media se mantiene en un rango de aproximadamente 84 a 91 Hz, mientras que la frecuencia mediana oscila entre 33 y 35 Hz. Estos resultados reflejan una señal relativamente estable en cuanto a contenido frecuencial, sin descensos notables entre contracciones consecutivas.
+
+Desde el punto de vista fisiológico, esto sugiere que no hay evidencia de fatiga muscular significativa. En condiciones de fatiga, se esperaría una disminución progresiva de las frecuencias media y mediana, producto de la reducción en la velocidad de conducción de las fibras musculares y la menor sincronización de las unidades motoras.
+En este caso, la constancia o leve aumento en las frecuencias indica que el músculo mantiene un rendimiento estable y una actividad eléctrica sostenida a lo largo del tiempo, lo cual podría deberse a una señal emulada o a un registro corto en el que no se alcanza un nivel de agotamiento fisiológico.
 
 
 
