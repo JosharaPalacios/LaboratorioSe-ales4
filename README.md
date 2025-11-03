@@ -81,7 +81,7 @@ Esta disminución en la velocidad de conducción es la que provoca el desplazami
 ## PARTE C – Análisis espectral mediante FFT
 En esta sección se aplicó la Transformada Rápida de Fourier (FFT) a cada contracción registrada en la señal EMG real capturada durante el laboratorio. El objetivo fue observar la evolución del contenido espectral para detectar la aparición de fatiga muscular.
 
-## Código utilizado
+### Código utilizado
 <pre>
 ```python
 from google.colab import drive 
@@ -161,4 +161,9 @@ display(df_picos.head())
 •	Fisiológicamente, la fatiga reduce la velocidad de conducción de las fibras musculares, provocando que los potenciales de acción sean más lentos y que la energía espectral se concentre en frecuencias menores.
 
 ### CONCLUSIONES
+•	Se comprobó que la Transformada Rápida de Fourier (FFT) es una herramienta eficaz para analizar la evolución del contenido frecuencial de una señal EMG.
+•	Se observó un desplazamiento del pico espectral hacia bajas frecuencias con el aumento del esfuerzo sostenido, lo cual confirma la presencia de fatiga muscular.
+•	El análisis espectral resulta útil como herramienta diagnóstica y de monitoreo en electromiografía, permitiendo evaluar objetivamente el estado de fatiga de un músculo.
+•	En futuras aplicaciones se recomienda complementar con frecuencia mediana y frecuencia media como métricas más robustas frente a ruido y variabilidad individual.
+
 
