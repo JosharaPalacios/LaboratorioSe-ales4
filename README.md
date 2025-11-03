@@ -6,8 +6,71 @@ Fecha: Noviembre 2025
 Título de la práctica: Señales electromiográficas EMG 
 ## PARTE A – Captura de la señal emulada
 ## PARTE B - Captura de la señal de paciente
+## PARTE B - Captura de la señal de paciente
+
 ### a) Electrodos
-En nuestro caso no contabamos c
+Ya que no contábamos con el modulo de EMG, se implementó el modulo AD8232 de ECG para poder hacer la captura de la señal electromiografía superficial por medio de electrodos, aprovechando que este modulo tiene la capacidad de detectar el diferencial de potenciales eléctricos en la piel.
+Los electrodos se colocaron de manera superficial sobre el brazo izquierdo de una paciente sana, naturalmente diestra de 19 años, siguiendo esta disposición:
+- Electrodo verde (GND): Se ubicó sobre el codo, haciendo de este una referencia eléctrica.
+- Electrodo rojo: sobre la parte proximal del musculo braquiorradial, cerca al codo.
+- Electrodo amarillo: posición distal mas proximal a la muñeca.
+
+El antebrazo izquierdo, al ser no dominante, presenta menor entrenamiento motor, lo que puede reflejarse en una menor amplitud de señal y una aparición más lenta de la fatiga. Lo cual en ese momento no teníamos conocimiento, pero es un dato importante para la amplitud de la señal.
+
+### b) Adquisición de la señal
+A continuación, vamos a hacer un recuento de los materiales que implementamos para la adquisición de nuestra señal:
+
+- Modulo AD8232 de ECG
+- Microcontrolador STM32 y ST- Link para la alimentación de 3,3 V
+- DAQ con entradas análogas AI
+- Protoboard y cables de conexión
+- Computador con NI Package Manager y Python (Spyder / Anaconda)
+
+Para la configuración del circuito se dio de esta manera:
+
+- La alimentación de 3,3 V provino directamente del stm32 para evitar dañar el módulo con la alimentación natural de 5 V del DAQ
+- El GND del modulo se conecto a la primera entrada del DAQ
+- La salida OUTPUT del modulo se conectó a la siguiente entrada análoga del DAQ
+- Antes de la captura de la señal se verificó mediante el Test Device del DAQ
+
+La señal se adquirió en tiempo real mediante un código en Python, mientras la voluntaria realizaba las contracciones con la pelota antiestrés aproximadamente 50 por minuto hasta llegar a la fatiga que fue aproximadamente a las 460 contracciones.
+
+### c) Filtro Pasa banda
+Este filtrado tiene como objetivo eliminar las componentes que no corresponden a la actividad muscular.
+- <20 Hz son por lo general respiración o movimientos de la voluntaria
+- 450 Hz ruido natural de la corriente eléctrica
+
+<img width="1010" height="393" alt="image" src="https://github.com/user-attachments/assets/6bd74926-3b6e-4716-9d25-eebc8b835611" />
+
+
+El filtro implementado es de tipo Butterworth, este se implementó por su respuesta plana, sin ondulaciones y su atenuación progresiva, de cuarto orden ya que es el mejo para este caso para no generar desequilibrios.
+El uso de `filtfilt` es para que se filtre sin que haya un desfase, manteniendo así la alineación temporal de la señal.
+
+<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/746ec064-09b1-45b7-9da6-1f85926fa794" />
+
+
+### d) Transformada Rápida de Fourier (FFT)
+Se implementó la FFT para convertir la señal del dominio del tiempo al dominio de la frecuencia, esto permitió identificar las secciones en donde se concentraba la energía muscular.
+En señales EMG, la mayoría de energía se concentra entre 40 y 150 Hz, con otros picos que dependen del musculo y la contracción que se esté haciendo.
+
+<img width="990" height="490" alt="image" src="https://github.com/user-attachments/assets/f3a5623b-c681-4998-85aa-03ee4975c92d" />
+
+
+### e) Segmentación y cálculo de frecuencias
+La señal se dividió en 5 segmentos de misma duración `np.array_split`cada uno representando un bloque de contracciones, en cada uno de los bloques se buscó la frecuencia media y la frecuencia mediana. Aquí la tabla:
+En esta tabla podemos ver la variación de la frecuencia media que indica en 44.72 Hz y finaliza en 43.83 Hz, esto es una ligera reducción lo que indica una fatiga muscular, pero de baja magnitud, en cuanto a la frecuencia mediana es de 39.06 Hz lo que quiere decir que la resolución frecuencial fue demasiado baja.
+
+Esto en interpretación fisiológica tendríamos que la frecuencia media esta relacionada con la velocidad y conducción que tienen las fibras musculares y las unidades motoras, a medida que el musculo se fatiga disminuye la contracción eléctrica, las fibras rápidas dejan de activarse y baja la frecuencia, nuestros resultados arrojan que las muestras no fueron suficientes para el análisis. 
+
+### f) Resultados
+El descenso de la frecuencia media nos indica una tendencia leve a la fatiga muscular, aunque no pronunciada, esto en cuanto al análisis, pero en realidad si se llegó a la fatiga muscular. En los músculos que no son dominantes como lo hicimos en nuestro caso, la fatiga es más lenta, sin embargo, en nuestro caso experimental, nuestra voluntaria llegó a la fatiga ya que la pelota antiestrés era bastante dura por lo cual también requería de fuerza, pero se puede apreciar que las contracciones iniciales fueron más potentes y al final disminuyeron.
+
+<img width="686" height="394" alt="image" src="https://github.com/user-attachments/assets/8878e72c-de02-45bd-a7e8-aceff9c64432" />
+
+
+### g) Parte Fisiológica
+Debido a la repetición de contracciones se acumularon productos sub y metabólicos como lo son principalmente iones de hidrógeno, la reducción de ATP afectó a la propagación del potencial de acción por las fibras musculares (sarcolema)  y la disminución del potencial de membrana en la fibra muscular debido a la acumulación de potasio K+ extracelular.
+Esta disminución en la velocidad de conducción es la que provoca el desplazamiento del EMG hacia frecuencias más bajas, por lo cual no se presencia una fatiga clara, esto puede ser porque el ejercicio haya sido de muy baja intensidad o de poca duración para inducir cambios metabólicos y de velocidad de conducción.
 
 ## PARTE C – Análisis espectral mediante FFT
 En esta sección se aplicó la Transformada Rápida de Fourier (FFT) a cada contracción registrada en la señal EMG real capturada durante el laboratorio. El objetivo fue observar la evolución del contenido espectral para detectar la aparición de fatiga muscular.
