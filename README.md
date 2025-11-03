@@ -6,6 +6,8 @@ Fecha: Noviembre 2025
 Título de la práctica: Señales electromiográficas EMG 
 ## PARTE A – Captura de la señal emulada
 
+
+
 ## PARTE B - Captura de la señal de paciente
 
 ### a) Electrodos
@@ -61,17 +63,20 @@ En señales EMG, la mayoría de energía se concentra entre 40 y 150 Hz, con otr
 
 ### e) Segmentación y cálculo de frecuencias
 
-<img width="859" height="372" alt="image" src="https://github.com/user-attachments/assets/fc839fcf-1699-4fc5-99bc-30933c893d21" />
+<img width="645" height="305" alt="image" src="https://github.com/user-attachments/assets/6b974b5d-a7ad-4692-9bc7-f485d7ea78ac" />
 
 La señal se dividió en 5 segmentos de misma duración `np.array_split`cada uno representando un bloque de contracciones, en cada uno de los bloques se buscó la frecuencia media y la frecuencia mediana. Aquí la tabla:
-En esta tabla podemos ver la variación de la frecuencia media que indica en 44.72 Hz y finaliza en 43.83 Hz, esto es una ligera reducción lo que indica una fatiga muscular, pero de baja magnitud, en cuanto a la frecuencia mediana es de 39.06 Hz lo que quiere decir que la resolución frecuencial fue demasiado baja.
+En esta tabla podemos ver la variación de la frecuencia media que indica en 47.54 Hz y finaliza en 47.42 Hz, esto es una ligera reducción lo que indica una fatiga muscular, pero de baja magnitud, es decir, una fatiga leve, pero no sostenida, en cuanto a la frecuencia mediana Oscila entre 48.83 Hz y 39.06 Hz esta caída en la frecuencia es normal en una fatiga muscular, pero el posterior aumento es índice de una recuperación o una mejora en la postura que permitió la activación de nuevas fibras.
 
-Esto en interpretación fisiológica tendríamos que la frecuencia media esta relacionada con la velocidad y conducción que tienen las fibras musculares y las unidades motoras, a medida que el musculo se fatiga disminuye la contracción eléctrica, las fibras rápidas dejan de activarse y baja la frecuencia, nuestros resultados arrojan que las muestras no fueron suficientes para el análisis. 
+Esto en interpretación fisiológica tendríamos que la disminución deambas señales nos indican un descenso en la velocidad e la consucción de las fibras musculares y una menor activación de las motoneuronas rápidas, normal en la fatiga muscular localizada.
 
 ### f) Resultados
-El descenso de la frecuencia media nos indica una tendencia leve a la fatiga muscular, aunque no pronunciada, esto en cuanto al análisis, pero en realidad si se llegó a la fatiga muscular. En los músculos que no son dominantes como lo hicimos en nuestro caso, la fatiga es más lenta, sin embargo, en nuestro caso experimental, nuestra voluntaria llegó a la fatiga ya que la pelota antiestrés era bastante dura por lo cual también requería de fuerza, pero se puede apreciar que las contracciones iniciales fueron más potentes y al final disminuyeron.
+La siguiente gráfica es la frecuencia media en azul y la frecuencia mediana en naranja, en esta gráfica se aprecia el descenso de ambas señales entre los cortes 2 y 4 que son normales en la fatiga muscular, despues se puede ver la compensación del musculo que es una posible redistribución de la carga entre fibras activas o un ajuste en la fuerza aplicada.
 
-<img width="686" height="394" alt="image" src="https://github.com/user-attachments/assets/8878e72c-de02-45bd-a7e8-aceff9c64432" />
+En conjunto, los resultados confirman que el método implementado de filtro es capaz de detectar cambios fisiológicos pequeños en la actividad muscular.
+
+<img width="686" height="394" alt="image" src="https://github.com/user-attachments/assets/7d8cc55d-c0f4-4a2c-a2d6-ba25c954b457" />
+
 
 
 ### g) Parte Fisiológica
