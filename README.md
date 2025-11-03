@@ -80,19 +80,21 @@ df_picos = pd.DataFrame({
 
 display(df_picos.head())
 
-###Resultado
+
+
+#Resultado
 <img width="323" height="194" alt="image" src="https://github.com/user-attachments/assets/648a6e3c-feec-4897-b41f-7629fceffd09" />
 
-##Gráfica – FFT de primeras vs últimas contracciones
+#Gráfica – FFT de primeras vs últimas contracciones
 <img width="1096" height="702" alt="image" src="https://github.com/user-attachments/assets/0dc1ca18-f446-4a6e-b8d8-0f77d7d89a92" />
 
-##Análisis e interpretación
+#Análisis e interpretación
 El pico espectral de las contracciones iniciales se ubicó alrededor de 60 Hz, mientras que en las últimas contracciones descendió hacia ~38–40 Hz.
 Este desplazamiento hacia frecuencias más bajas representa una pérdida de contenido de alta frecuencia, lo cual es típico del proceso de fatiga muscular.
 Fisiológicamente, la fatiga reduce la velocidad de conducción de las fibras musculares, provocando que los potenciales de acción sean más lentos y que la energía espectral se concentre en frecuencias menores.
 El análisis espectral (FFT) permite visualizar esta tendencia claramente al comparar los espectros de las primeras y últimas contracciones.
 
-##Conclusiones
+#Conclusiones
 Se comprobó que la Transformada Rápida de Fourier (FFT) es una herramienta eficaz para analizar la evolución del contenido frecuencial de una señal EMG.
 Se observó un desplazamiento del pico espectral hacia bajas frecuencias con el aumento del esfuerzo sostenido, lo cual confirma la presencia de fatiga muscular.
 El análisis espectral resulta útil como herramienta diagnóstica y de monitoreo en electromiografía, permitiendo evaluar objetivamente el estado de fatiga de un músculo.
