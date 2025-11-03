@@ -171,6 +171,8 @@ display(df_picos.head())
 
 •	En futuras aplicaciones se recomienda complementar con frecuencia mediana y frecuencia media como métricas más robustas frente a ruido y variabilidad individual.
 
-### FLUJO PARTE C 
+### DIAGRAMA DE FLUJO PARTE B 
+![My First Board](https://github.com/user-attachments/assets/e58a11de-7140-4272-b225-38ec7cbee7c1)
+### DIAGRAMA DE FLUJO PARTE C 
 <img width="904" height="1280" alt="image" src="https://github.com/user-attachments/assets/7def59b8-2302-4c6d-baa2-dac3692890dc" />
 
