@@ -13,6 +13,7 @@ En nuestro caso no contabamos c
 En esta sección se aplicó la Transformada Rápida de Fourier (FFT) a cada contracción registrada en la señal EMG real capturada durante el laboratorio. El objetivo fue observar la evolución del contenido espectral para detectar la aparición de fatiga muscular.
 
 ## Código utilizado
+```python
 from google.colab import drive 
 drive.mount('/content/drive')
 
@@ -46,7 +47,6 @@ picos = []
 
 plt.figure(figsize=(13, 8))
 for i, seg in enumerate(segmentos, start=1):
-
     N = len(seg)
     fft_vals = np.fft.fft(seg)
     fft_freq = np.fft.fftfreq(N, 1/fs)
@@ -72,8 +72,10 @@ plt.grid()
 plt.show()
 
 # Tabla de picos para el informe
-df_picos = pd.DataFrame({"Contracción": range(1, n_contr+1),
-                         "Pico espectral (Hz)": picos})
+df_picos = pd.DataFrame({
+    "Contracción": range(1, n_contr+1),
+    "Pico espectral (Hz)": picos
+})
 
 display(df_picos.head())
 
