@@ -5,7 +5,7 @@ Estudiantes: [Maria Jose Peña Velandia, Joshara Valentina Palacios, Lina Marcel
 Fecha: Noviembre 2025
 Título de la práctica: Señales electromiográficas EMG 
 ## PARTE A – Captura de la señal emulada
-## PARTE B - Captura de la señal de paciente
+
 ## PARTE B - Captura de la señal de paciente
 
 ### a) Electrodos
@@ -14,6 +14,9 @@ Los electrodos se colocaron de manera superficial sobre el brazo izquierdo de un
 - Electrodo verde (GND): Se ubicó sobre el codo, haciendo de este una referencia eléctrica.
 - Electrodo rojo: sobre la parte proximal del musculo braquiorradial, cerca al codo.
 - Electrodo amarillo: posición distal mas proximal a la muñeca.
+
+  <img width="409" height="600" alt="image" src="https://github.com/user-attachments/assets/d2cce0eb-db82-445f-83fb-528671bf93db" />
+
 
 El antebrazo izquierdo, al ser no dominante, presenta menor entrenamiento motor, lo que puede reflejarse en una menor amplitud de señal y una aparición más lenta de la fatiga. Lo cual en ese momento no teníamos conocimiento, pero es un dato importante para la amplitud de la señal.
 
@@ -57,6 +60,9 @@ En señales EMG, la mayoría de energía se concentra entre 40 y 150 Hz, con otr
 
 
 ### e) Segmentación y cálculo de frecuencias
+
+<img width="859" height="372" alt="image" src="https://github.com/user-attachments/assets/fc839fcf-1699-4fc5-99bc-30933c893d21" />
+
 La señal se dividió en 5 segmentos de misma duración `np.array_split`cada uno representando un bloque de contracciones, en cada uno de los bloques se buscó la frecuencia media y la frecuencia mediana. Aquí la tabla:
 En esta tabla podemos ver la variación de la frecuencia media que indica en 44.72 Hz y finaliza en 43.83 Hz, esto es una ligera reducción lo que indica una fatiga muscular, pero de baja magnitud, en cuanto a la frecuencia mediana es de 39.06 Hz lo que quiere decir que la resolución frecuencial fue demasiado baja.
 
@@ -76,6 +82,7 @@ Esta disminución en la velocidad de conducción es la que provoca el desplazami
 En esta sección se aplicó la Transformada Rápida de Fourier (FFT) a cada contracción registrada en la señal EMG real capturada durante el laboratorio. El objetivo fue observar la evolución del contenido espectral para detectar la aparición de fatiga muscular.
 
 ## Código utilizado
+<pre>
 ```python
 from google.colab import drive 
 drive.mount('/content/drive')
@@ -141,5 +148,5 @@ df_picos = pd.DataFrame({
 })
 
 display(df_picos.head())
-
+</pre>
 ## RESULTADOS 
