@@ -79,6 +79,8 @@ df_picos = pd.DataFrame({
 })
 
 display(df_picos.head())
-##Resultado
-<img width="383" height="127" alt="image" src="https://github.com/user-attachments/assets/d1c062a8-b7e5-4db0-b3f0-c88590d8c982" />
+
+## Resultado
+<img width="393" height="128" alt="image" src="https://github.com/user-attachments/assets/831aa315-a830-44d9-a968-6db793af15a2" />
+
 
