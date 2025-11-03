@@ -150,9 +150,15 @@ df_picos = pd.DataFrame({
 display(df_picos.head())
 </pre>
 ### RESULTADOS
+<img width="301" height="179" alt="image" src="https://github.com/user-attachments/assets/086af699-2f9a-485b-bfb2-4ba1d78e4060" />
 
 ### GRÁFICA – FFT DE PRIMERAS VS ÚLTIMAS CONTRACCIONES
 <img width="1096" height="702" alt="image" src="https://github.com/user-attachments/assets/404ce025-26dd-46bc-8b03-d02d7de0ad3e" />
 
 ### ANÁLISIS E INTERPRETACIÓN
+•	El pico espectral de las contracciones iniciales se ubicó alrededor de 60 Hz, mientras que en las últimas contracciones descendió hacia ~38–40 Hz.
+•	Este desplazamiento hacia frecuencias más bajas representa una pérdida de contenido de alta frecuencia, lo cual es típico del proceso de fatiga muscular.
+•	Fisiológicamente, la fatiga reduce la velocidad de conducción de las fibras musculares, provocando que los potenciales de acción sean más lentos y que la energía espectral se concentre en frecuencias menores.
+
+### CONCLUSIONES
 
