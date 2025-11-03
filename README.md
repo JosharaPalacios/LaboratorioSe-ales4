@@ -69,19 +69,19 @@ Para la configuración del circuito se dio de esta manera:
 - Antes de la captura de la señal se verificó mediante el Test Device del DAQ
 
 La señal se adquirió en tiempo real mediante un código en Python, mientras la voluntaria realizaba las contracciones con la pelota antiestrés aproximadamente 50 por minuto hasta llegar a la fatiga que fue aproximadamente a las 460 contracciones.
+<img width="1010" height="393" alt="image" src="https://github.com/user-attachments/assets/263143bc-e329-46ba-944c-37548419a497" />
 
 ### c) Filtro Pasa banda
 Este filtrado tiene como objetivo eliminar las componentes que no corresponden a la actividad muscular.
-- <20 Hz son por lo general respiración o movimientos de la voluntaria
-- 450 Hz ruido natural de la corriente eléctrica
+-	<20 Hz son por lo general respiración o movimientos de la voluntaria
+-	>450 Hz ruido natural de la corriente eléctrica
+El uso de `filtfilt` es para que se filtre sin que haya un desfase, manteniendo así la alineación temporal de la señal
+El filtro implementado es de tipo Butterworth, este se implementó por su respuesta plana, sin ondulaciones y su atenuación progresiva que no cambia la morfología de la señal. Este filtro mantiene la forma real de la señal muscular y mininiza el riesgo de amplificar ruidos no deseados.
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/11ed1a84-12c7-4f91-908d-d0aadbc632cc" />
 
-<img width="1010" height="393" alt="image" src="https://github.com/user-attachments/assets/6bd74926-3b6e-4716-9d25-eebc8b835611" />
+En la gráfica se observa cómo la señal filtrada (en naranja) conserva la estructura temporal de la original (en azul), pero con reducción del ruido de baja y alta frecuencia.
+Los picos de contracción son más definidos y la línea base más estable, lo que mejora la interpretación de los eventos musculares.
 
-
-El filtro implementado es de tipo Butterworth, este se implementó por su respuesta plana, sin ondulaciones y su atenuación progresiva, de cuarto orden ya que es el mejo para este caso para no generar desequilibrios.
-El uso de `filtfilt` es para que se filtre sin que haya un desfase, manteniendo así la alineación temporal de la señal.
-
-<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/746ec064-09b1-45b7-9da6-1f85926fa794" />
 
 
 ### d) Transformada Rápida de Fourier (FFT)
