@@ -157,13 +157,18 @@ display(df_picos.head())
 
 ### ANÁLISIS E INTERPRETACIÓN
 •	El pico espectral de las contracciones iniciales se ubicó alrededor de 60 Hz, mientras que en las últimas contracciones descendió hacia ~38–40 Hz.
+
 •	Este desplazamiento hacia frecuencias más bajas representa una pérdida de contenido de alta frecuencia, lo cual es típico del proceso de fatiga muscular.
+
 •	Fisiológicamente, la fatiga reduce la velocidad de conducción de las fibras musculares, provocando que los potenciales de acción sean más lentos y que la energía espectral se concentre en frecuencias menores.
 
 ### CONCLUSIONES
 •	Se comprobó que la Transformada Rápida de Fourier (FFT) es una herramienta eficaz para analizar la evolución del contenido frecuencial de una señal EMG.
+
 •	Se observó un desplazamiento del pico espectral hacia bajas frecuencias con el aumento del esfuerzo sostenido, lo cual confirma la presencia de fatiga muscular.
+
 •	El análisis espectral resulta útil como herramienta diagnóstica y de monitoreo en electromiografía, permitiendo evaluar objetivamente el estado de fatiga de un músculo.
+
 •	En futuras aplicaciones se recomienda complementar con frecuencia mediana y frecuencia media como métricas más robustas frente a ruido y variabilidad individual.
 
 
