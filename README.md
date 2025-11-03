@@ -84,12 +84,11 @@ display(df_picos.head())
 ## RESULTADO
 
 
----
+
 
 ##  GRAFICA - FFT DE PRIMERAS VS ÚLTIMAS CONTRACCIONES 
 <img width="1096" height="702" alt="FFT de primeras vs últimas contracciones" src="https://github.com/user-attachments/assets/7f336948-5984-4669-8d8f-0723d8aab865" />
 
----
 
 ## ANÁLISIS E INTERPRETACIÓN
 El **pico espectral** de las contracciones iniciales se ubicó alrededor de **60 Hz**, mientras que en las últimas contracciones descendió hacia **~38–40 Hz**.  
@@ -99,7 +98,6 @@ Fisiológicamente, la fatiga reduce la **velocidad de conducción de las fibras 
 
 El **análisis espectral (FFT)** permite visualizar esta tendencia claramente al comparar los espectros de las primeras y últimas contracciones.
 
----
 
 ##  CONCLUSIONES  
 - Se comprobó que la **Transformada Rápida de Fourier (FFT)** es una herramienta eficaz para analizar la evolución del contenido frecuencial de una señal EMG.  
