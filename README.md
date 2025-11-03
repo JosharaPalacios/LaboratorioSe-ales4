@@ -9,3 +9,4 @@ Título de la práctica: Señales electromiográficas EMG
 ### a) Electrodos
 En nuestro caso no contabamos c
 ## PARTE C – Análisis espectral mediante FFT
+En esta sección se aplicó la Transformada Rápida de Fourier (FFT) a cada contracción registrada en la señal EMG real capturada durante el laboratorio. El objetivo fue observar la evolución del contenido espectral para detectar la aparición de fatiga muscular.
