@@ -211,7 +211,9 @@ display(df_picos.head())
 ### DIAGRAMA DE FLUJO PARTE A
 <img width="1832" height="2274" alt="_Diagrama de flujo" src="https://github.com/user-attachments/assets/e645b6b7-d26a-4c8c-9261-c2099d6ebbed" />
 ### DIAGRAMA DE FLUJO PARTE B 
-![My First Board](https://github.com/user-attachments/assets/df8174c7-dd5d-4c02-bc22-94a42b4e898f)
+![diagramaflujo parte b](https://github.com/user-attachments/assets/bb9327d5-a013-4c6f-b1ac-7b034b0c1065)
+
+
 
 ### DIAGRAMA DE FLUJO PARTE C 
 <img width="904" height="1280" alt="image" src="https://github.com/user-attachments/assets/7def59b8-2302-4c6d-baa2-dac3692890dc" />
