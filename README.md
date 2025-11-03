@@ -149,4 +149,6 @@ df_picos = pd.DataFrame({
 
 display(df_picos.head())
 </pre>
-## RESULTADOS 
+## RESULTADOS
+
+## GRÁFICA – FFT DE PRIMERAS VS ÚLTIMAS CONTRACCIONES
