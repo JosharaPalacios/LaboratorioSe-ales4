@@ -81,6 +81,8 @@ df_picos = pd.DataFrame({
 display(df_picos.head())
 
 ## Resultado
-<img width="393" height="128" alt="image" src="https://github.com/user-attachments/assets/831aa315-a830-44d9-a968-6db793af15a2" />
+<img width="323" height="194" alt="image" src="https://github.com/user-attachments/assets/648a6e3c-feec-4897-b41f-7629fceffd09" />
 
+## Gráfica – FFT de primeras vs últimas contracciones
+<img width="1096" height="702" alt="image" src="https://github.com/user-attachments/assets/0dc1ca18-f446-4a6e-b8d8-0f77d7d89a92" />
 
