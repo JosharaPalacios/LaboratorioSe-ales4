@@ -79,7 +79,8 @@ df_picos = pd.DataFrame({
 })
 
 display(df_picos.head())
+---
 
-## RESULTADOS 
+##RESULTADOS
 
 
